@@ -1,0 +1,23 @@
+{
+  "name": "FiveDayForecast",
+  "version": "0.0.0",
+  "authors": [
+    "jacobdlewis <jacobdlewis@gmail.com>"
+  ],
+  "description": "app to show 5-day forecast for given ZIP code",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "zurb/bower-foundation#~5.5.0",
+    "lodash": "~3.0.0"
+  }
+}
