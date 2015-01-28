@@ -4,14 +4,20 @@ html(lang="en-US")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title My Title
+    title Five Day Forecast
+    link(rel="stylesheet" href="vendor/foundation/css/foundation.css")
     link(rel="stylesheet" href="css/main.css")
-
   body
-    // [if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]
 
-    .container
-      img(src="img/NSS-logo-primary.svg", alt="NSS Logo", title="Nashville Software School")
-      h1 Hello World
 
-    script(src="js/main.js")
+    h1 Find Your Forecast
+    label Enter ZIP code:
+    input#userZip(type='text', name='userZip')
+
+    button.button Submit
+
+    a.button Default button
+
+    h2 Five Day Forecast
+
+    ul#ForecastList
