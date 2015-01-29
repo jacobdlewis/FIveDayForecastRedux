@@ -28,10 +28,13 @@ document.querySelector('#userZip').addEventListener('click', function(){
 
       listOfDays.push(currentDay);
     }
+    i = 0;
     console.log(listOfDays);
+    var ul = document.querySelector('#forecastList');
+    ul.empty;
+    ul.appendChild(createList(listOfDays));
+
   });
-  var ul = document.querySelector('#forecastList');
-  ul.appendChild(createList(listOfDays));
 
 });
 
