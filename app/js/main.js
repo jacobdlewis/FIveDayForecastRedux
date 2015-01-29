@@ -26,8 +26,8 @@ document.querySelector('#userZip').addEventListener('click', function(){
 
 
       listOfDays.push(currentDay);
-      console.log(listOfDays);
     }
+    console.log(listOfDays);
   });
 });
 
