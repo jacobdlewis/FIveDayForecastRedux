@@ -2,18 +2,36 @@
 
 var zip;
 var zipUrl;
+var dayInfo0 = [];
+var dayInfo1 = [];
+var dayInfo2 = [];
+var dayInfo3 = [];
+var dayInfo4 = [];
+
 document.querySelector('#userZip').addEventListener('click', function(){
   zip = document.querySelector('#inputZip').value;
   console.log(zip);
   zipUrl = 'http://api.wunderground.com/api/db432a740561cd8d/forecast10day/q/' + zip + '.json';
 
   getJSON(zipUrl, function(result){
-    var day = result.forecast.simpleforecast.forecastday;
-    var dailyHigh = day[0].high.fahrenheit;
-    var dailyLow = day[0].low.fahrenheit;
-    var weekday = day[0].date.weekday_short;
-    var icon = day[0].icon_url;
-    console.log(day);
+    for(var i = 0; i < 5; i++){
+      var day = result.forecast.simpleforecast.forecastday[i];
+      var dailyHigh = day.high.fahrenheit;
+      var dailyLow = day.low.fahrenheit;
+      var weekday = day.date.weekday_short;
+      var icon = day.icon_url;
+
+      array.push(day);
+      array.push(dailyHigh);
+      array.push(dailyLow);
+      array.push(weekday);
+      array.push(icon);
+
+
+
+
+      console.log(dayInfo0);
+    }
   });
 });
 
