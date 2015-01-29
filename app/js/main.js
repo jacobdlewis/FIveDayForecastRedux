@@ -2,7 +2,6 @@
 
 var zip;
 var zipUrl;
-var listOfDays = [];
 
 
 
@@ -12,6 +11,7 @@ document.querySelector('#userZip').addEventListener('click', function(){
   zipUrl = 'http://api.wunderground.com/api/db432a740561cd8d/forecast10day/q/' + zip + '.json';
 
   getJSON(zipUrl, function(result){
+    var listOfDays = [];
     for(var i = 0; i < 5; i++){
       var currentDay = [];
       var day = result.forecast.simpleforecast.forecastday[i];
@@ -28,10 +28,9 @@ document.querySelector('#userZip').addEventListener('click', function(){
 
       listOfDays.push(currentDay);
     }
-    i = 0;
     console.log(listOfDays);
     var ul = document.querySelector('#forecastList');
-    ul.empty;
+    ul.innerHTML = '';
     ul.appendChild(createList(listOfDays));
 
   });
