@@ -5,6 +5,7 @@ var zipUrl;
 var listOfDays = [];
 
 
+
 document.querySelector('#userZip').addEventListener('click', function(){
   zip = document.querySelector('#inputZip').value;
   console.log(zip);
@@ -29,9 +30,29 @@ document.querySelector('#userZip').addEventListener('click', function(){
     }
     console.log(listOfDays);
   });
+  var ul = document.querySelector('#forecastList');
+  ul.appendChild(createList(listOfDays));
+
 });
 
+function createList(array) {
+  var docFragment = document.createDocumentFragment();
 
+  _.forEach(array, function(dayArray){
+    var ol = document.createElement('ol');
+
+    _.forEach(dayArray, function(dayAttr){
+      var li = document.createElement('li');
+      var text = document.createTextNode(dayAttr);
+      li.appendChild(text);
+      ol.appendChild(li);
+    })
+
+    docFragment.appendChild(ol);
+  })
+
+  return docFragment;
+}
 
 
 
