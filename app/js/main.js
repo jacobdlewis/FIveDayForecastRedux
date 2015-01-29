@@ -15,22 +15,26 @@ document.querySelector('#userZip').addEventListener('click', function(){
 
   getJSON(zipUrl, function(result){
     for(var i = 0; i < 5; i++){
+      var currentDay = "dayInfo" + i;
       var day = result.forecast.simpleforecast.forecastday[i];
       var dailyHigh = day.high.fahrenheit;
       var dailyLow = day.low.fahrenheit;
       var weekday = day.date.weekday_short;
       var icon = day.icon_url;
 
-      array.push(day);
-      array.push(dailyHigh);
-      array.push(dailyLow);
-      array.push(weekday);
-      array.push(icon);
+      currentDay.push(dailyHigh);
+      //dayInfo1.push(dailyHigh);
+      //dayInfo2.push(dailyLow);
+      //dayInfo3.push(weekday);
+      //dayInfo4.push(icon);
 
 
 
 
-      console.log(dayInfo0);
+      console.log(dayInfo2);
+      console.log(dailyLow);
+      console.log(dailyHigh);
+      console.log(icon);
     }
   });
 });
