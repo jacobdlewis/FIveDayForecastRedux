@@ -7,18 +7,19 @@ html(lang="en-US")
     title Five Day Forecast
     link(rel="stylesheet" href="vendor/foundation/css/foundation.css")
     link(rel="stylesheet" href="css/main.css")
+    link(rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato" type="text/css")
   body
 
+    .wrapper
+      h1.main-header Find Your Forecast
 
-    h1 Find Your Forecast
-    label Enter ZIP code:
-    input#inputZip(type='text')
 
-    button.button#userZip Submit
+      input.inputZip#inputZip(type='text' placeholder="Enter your ZIP...")
 
-    h2 Five Day Forecast
+      button.button#userZip Submit
 
-    ul#forecastList
+      h2 Five Day Forecast
+    ul.forecastList#forecastList
 
     script(src = "js/main.js")
     script(src = "//cdn.jsdelivr.net/lodash/3.0.0/lodash.compat.min.js")
