@@ -2,11 +2,8 @@
 
 var zip;
 var zipUrl;
-var dayInfo0 = [];
-var dayInfo1 = [];
-var dayInfo2 = [];
-var dayInfo3 = [];
-var dayInfo4 = [];
+var listOfDays = [];
+
 
 document.querySelector('#userZip').addEventListener('click', function(){
   zip = document.querySelector('#inputZip').value;
@@ -15,22 +12,21 @@ document.querySelector('#userZip').addEventListener('click', function(){
 
   getJSON(zipUrl, function(result){
     for(var i = 0; i < 5; i++){
+      var currentDay = [];
       var day = result.forecast.simpleforecast.forecastday[i];
       var dailyHigh = day.high.fahrenheit;
       var dailyLow = day.low.fahrenheit;
       var weekday = day.date.weekday_short;
       var icon = day.icon_url;
 
-      array.push(day);
-      array.push(dailyHigh);
-      array.push(dailyLow);
-      array.push(weekday);
-      array.push(icon);
+      currentDay.push(dailyHigh);
+      currentDay.push(dailyLow);
+      currentDay.push(weekday);
+      currentDay.push(icon);
 
 
-
-
-      console.log(dayInfo0);
+      listOfDays.push(currentDay);
+      console.log(listOfDays);
     }
   });
 });
