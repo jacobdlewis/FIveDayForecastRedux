@@ -3,7 +3,6 @@ var zip;
 var zipUrl;
 document.querySelector('#userZip').addEventListener('click', function(){
   zip = document.querySelector('#inputZip').value;
-  console.log(zip);
   zipUrl = 'http://api.wunderground.com/api/db432a740561cd8d/forecast10day/q/' + zip + '.json';
   getJSON(zipUrl, function(result){
     var listOfDays = [];
@@ -20,7 +19,6 @@ document.querySelector('#userZip').addEventListener('click', function(){
       currentDay.push(icon);
       listOfDays.push(currentDay);
     }
-    console.log(listOfDays);
     var forecastContainer = document.querySelector('#forecastList');
     forecastContainer.innerHTML = '';
     forecastContainer.appendChild(makeDays(listOfDays));
@@ -66,7 +64,7 @@ var text_3 = document.createTextNode(array[2][2]);
 span_3.appendChild(text_3);
 var span_4 = document.createElement('SPAN');
 div_1.appendChild(span_4);
-var text_4 = document.createTextNode(array[2][0] + "|" + [2][1]);
+var text_4 = document.createTextNode(array[2][0] + "|" + array[2][1]);
 span_4.appendChild(text_4);
 var img_1 = document.createElement('IMG');
 img_1.setAttribute("src", array[2][3]);

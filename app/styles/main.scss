@@ -25,3 +25,16 @@ ol {
   margin-top: 10px;
 }
 
+.forecastList div {
+  height: 200px;
+  width: 150px;
+  background-color: white;
+  box-shadow: 5px 5px 5px darkslategrey;
+  display: inline-block;
+  margin: auto 15px;
+}
+.forecastList div span {
+  padding: 10px;
+  display: block;
+  font-weight: bold;
+}
