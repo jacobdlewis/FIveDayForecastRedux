@@ -1,2 +1,27 @@
-@import "variables";
-@import "headings";
+
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: aliceblue;
+}
+
+ol {
+  display: inline-block;
+}
+
+.wrapper{
+  text-align: center;
+  margin: auto;
+}
+
+.inputZip {
+  max-width: 250px;
+  margin: auto !important;
+  padding: 20px;
+}
+
+.button {
+  margin-top: 10px;
+}
+
