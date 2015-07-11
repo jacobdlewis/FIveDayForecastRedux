@@ -2,6 +2,8 @@
 var zip;
 var zipUrl;
 var localZip;
+var city;
+var state;
 
 document.querySelector('#location').addEventListener('click', function(){
   var ipUrl = 'http://api.wunderground.com/api/db432a740561cd8d/geolookup/q/autoip.json'
@@ -9,6 +11,8 @@ document.querySelector('#location').addEventListener('click', function(){
   zipUrl = 'http://api.wunderground.com/api/db432a740561cd8d/forecast10day/q/' + zip + '.json';
   getJSON(ipUrl, function(result) {
     localZip = result.location.zip;
+    city = result.location.city;
+    state = result.location.state;
     document.querySelector('#inputZip').value = localZip;
     console.log(localZip);
   });
